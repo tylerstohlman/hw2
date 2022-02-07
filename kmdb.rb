@@ -73,6 +73,30 @@ Role.destroy_all
 
 # Generate models and tables, according to the domain model
 
+christopher_nolan = Person.new
+christopher_nolan.name = "Christopher Nolan"
+christopher_nolan.save
+
+cn = Person.where({ name: "Christopher Nolan"})[0] 
+cn_id = cn.read_attribute(:person_id)
+
+batman_begins = Movie.new
+batman_begins.title = "Batman Begins"
+batman_begins.year_released = 2005
+batman_begins.rated = "PG-13"
+batman_begins.person_id = cn_id  
+batman_begins.save 
+
+batman = Role.new
+batman.character_name = "Batman"
+batman.person_id = 1
+batman.movie_id = 1
+batman.save 
+
+puts "There are #{Person.all.count} people"
+puts "There are #{Movie.all.count} movies"
+puts "There are #{Role.all.count} roles"
+
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
@@ -84,7 +108,10 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output
-# TODO!
+movies = Movie.all
+for movie in movies 
+    puts "#{movie.title} | #{movie.year_released} | #{movie.rated} | #{movie.person_id}"
+end 
 
 # Prints a header for the cast output
 puts ""

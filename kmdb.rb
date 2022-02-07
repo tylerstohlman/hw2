@@ -73,6 +73,11 @@ Role.destroy_all
 
 # Generate models and tables, according to the domain model
 
+#Done in models and db sections
+
+# Insert data into your database that reflects the sample data shown above
+# Do not use hard-coded foreign key IDs.
+
 new_person = Person.new
 new_person.name = "Christopher Nolan"
 new_person.save
@@ -100,10 +105,11 @@ the_dark_knight_rises.rated = "PG-13"
 the_dark_knight_rises.person_id = cn.id 
 the_dark_knight_rises.save 
 
+new_person = Person.new
+new_person.name = "Christian Bale"
+new_person.save 
 
-# Insert data into your database that reflects the sample data shown above
-# Do not use hard-coded foreign key IDs.
-# TODO!
+cb = Person.where({ name: "Christian Bale"})[0]
 
 # Prints a header for the movies output
 puts "Movies"

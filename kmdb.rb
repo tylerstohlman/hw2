@@ -73,28 +73,32 @@ Role.destroy_all
 
 # Generate models and tables, according to the domain model
 
-christopher_nolan = Person.new
-christopher_nolan.name = "Christopher Nolan"
-christopher_nolan.save
+new_person = Person.new
+new_person.name = "Christopher Nolan"
+new_person.save
 
 cn = Person.where({ name: "Christopher Nolan"})[0]
-cn_id = cn.read_attribute(:id)
 
 batman_begins = Movie.new
 batman_begins.title = "Batman Begins"
 batman_begins.year_released = 2005
 batman_begins.rated = "PG-13"
-batman_begins.person_id = cn_id  
+batman_begins.person_id = cn.id 
 batman_begins.save 
 
-bb = Movie.where({title: "Batman Begins"})[0]
-bb_id = bb.read_attribute(:movie_id)
+the_dark_knight = Movie.new
+the_dark_knight.title = "The Dark Knight"
+the_dark_knight.year_released = 2008
+the_dark_knight.rated = "PG-13"
+the_dark_knight.person_id = cn.id 
+the_dark_knight.save 
 
-
-
-puts "There are #{Person.all.count} people"
-puts "There are #{Movie.all.count} movies"
-puts "There are #{Role.all.count} roles"
+the_dark_knight_rises = Movie.new
+the_dark_knight_rises.title = "The Dark Knight Rises"
+the_dark_knight_rises.year_released = 2013
+the_dark_knight_rises.rated = "PG-13"
+the_dark_knight_rises.person_id = cn.id 
+the_dark_knight_rises.save 
 
 
 # Insert data into your database that reflects the sample data shown above
@@ -108,8 +112,9 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 movies = Movie.all
-for movie in movies 
-    puts "#{movie.title} | #{movie.year_released} | #{movie.rated} | #{movie.person_id}"
+for movie in cn.movies 
+    
+    puts "#{movie.title} | #{movie.year_released} | #{movie.rated} | #{movie.person.name}"
 end 
 
 # Prints a header for the cast output

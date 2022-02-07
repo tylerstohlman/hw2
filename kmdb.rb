@@ -77,8 +77,8 @@ christopher_nolan = Person.new
 christopher_nolan.name = "Christopher Nolan"
 christopher_nolan.save
 
-cn = Person.where({ name: "Christopher Nolan"})[0] 
-cn_id = cn.read_attribute(:person_id)
+cn = Person.where({ name: "Christopher Nolan"})[0]
+cn_id = cn.read_attribute(:id)
 
 batman_begins = Movie.new
 batman_begins.title = "Batman Begins"
@@ -87,11 +87,10 @@ batman_begins.rated = "PG-13"
 batman_begins.person_id = cn_id  
 batman_begins.save 
 
-batman = Role.new
-batman.character_name = "Batman"
-batman.person_id = 1
-batman.movie_id = 1
-batman.save 
+bb = Movie.where({title: "Batman Begins"})[0]
+bb_id = bb.read_attribute(:movie_id)
+
+
 
 puts "There are #{Person.all.count} people"
 puts "There are #{Movie.all.count} movies"
@@ -120,4 +119,3 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
-# TODO!

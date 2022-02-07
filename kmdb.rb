@@ -177,6 +177,96 @@ new_person.save
 
 ah = Person.where({ name: "Anne Hathaway"})[0]
 
+new_role = Role.new
+new_role.movie_id = batman_begins.id
+new_role.person_id = cb.id
+new_role.character_name = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = batman_begins.id
+new_role.person_id = mc.id
+new_role.character_name = "Alfred"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = batman_begins.id
+new_role.person_id = ln.id
+new_role.character_name = "Ra's Al Ghul"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = batman_begins.id
+new_role.person_id = kh.id
+new_role.character_name = "Rachel Dawes"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = batman_begins.id
+new_role.person_id = go.id
+new_role.character_name = "Comissioner Gordon"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight.id
+new_role.person_id = cb.id
+new_role.character_name = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight.id
+new_role.person_id = hl.id
+new_role.character_name = "Joker"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight.id
+new_role.person_id = ae.id
+new_role.character_name = "Harvey Dent"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight.id
+new_role.person_id = mc.id
+new_role.character_name = "Alfred"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight.id
+new_role.person_id = mg.id
+new_role.character_name = "Rachel Dawes"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight_rises.id
+new_role.person_id = cb.id
+new_role.character_name = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight_rises.id
+new_role.person_id = go.id
+new_role.character_name = "Comissioner Gordon"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight_rises.id
+new_role.person_id = th.id
+new_role.character_name = "Bane"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight_rises.id
+new_role.person_id = jgl.id
+new_role.character_name = "John Blake"
+new_role.save
+
+new_role = Role.new
+new_role.movie_id = the_dark_knight_rises.id
+new_role.person_id = ah.id
+new_role.character_name = "Selina Kyle"
+new_role.save
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
@@ -196,3 +286,8 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
+
+roles = Role.all
+for role in roles
+    puts "#{role.movie.title} | #{role.person.name} | #{role.character_name}"
+end 

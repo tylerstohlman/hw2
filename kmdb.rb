@@ -84,26 +84,32 @@ new_person.save
 
 cn = Person.where({ name: "Christopher Nolan"})[0]
 
-batman_begins = Movie.new
-batman_begins.title = "Batman Begins"
-batman_begins.year_released = 2005
-batman_begins.rated = "PG-13"
-batman_begins.person_id = cn.id 
-batman_begins.save 
+new_movie = Movie.new
+new_movie.title = "Batman Begins"
+new_movie.year_released = 2005
+new_movie.rated = "PG-13"
+new_movie.person_id = cn.id 
+new_movie.save 
 
-the_dark_knight = Movie.new
-the_dark_knight.title = "The Dark Knight"
-the_dark_knight.year_released = 2008
-the_dark_knight.rated = "PG-13"
-the_dark_knight.person_id = cn.id 
-the_dark_knight.save 
+batman_begins = Movie.where({ title: "Batman Begins"})[0]
 
-the_dark_knight_rises = Movie.new
-the_dark_knight_rises.title = "The Dark Knight Rises"
-the_dark_knight_rises.year_released = 2013
-the_dark_knight_rises.rated = "PG-13"
-the_dark_knight_rises.person_id = cn.id 
-the_dark_knight_rises.save 
+new_movie = Movie.new
+new_movie.title = "The Dark Knight"
+new_movie.year_released = 2008
+new_movie.rated = "PG-13"
+new_movie.person_id = cn.id 
+new_movie.save 
+
+the_dark_knight = Movie.where({ title: "The Dark Knight"})[0]
+
+new_movie = Movie.new
+new_movie.title = "The Dark Knight Rises"
+new_movie.year_released = 2013
+new_movie.rated = "PG-13"
+new_movie.person_id = cn.id 
+new_movie.save 
+
+the_dark_knight_rises = Movie.where({ title:"The Dark Knight Rises"})[0]
 
 new_person = Person.new
 new_person.name = "Christian Bale"

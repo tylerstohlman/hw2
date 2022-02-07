@@ -111,6 +111,66 @@ new_person.save
 
 cb = Person.where({ name: "Christian Bale"})[0]
 
+new_person = Person.new
+new_person.name = "Michael Caine"
+new_person.save 
+
+mc = Person.where({ name: "Michael Caine"})[0]
+
+new_person = Person.new
+new_person.name = "Liam Neeson"
+new_person.save 
+
+ln = Person.where({ name: "Liam Neeson"})[0]
+
+new_person = Person.new
+new_person.name = "Katie Holmes"
+new_person.save 
+
+kh = Person.where({ name: "Katie Holmes"})[0]
+
+new_person = Person.new
+new_person.name = "Gary Oldman"
+new_person.save 
+
+go = Person.where({ name: "Gary Oldman"})[0]
+
+new_person = Person.new
+new_person.name = "Heath Ledger"
+new_person.save 
+
+hl = Person.where({ name: "Heath Ledger"})[0]
+
+new_person = Person.new
+new_person.name = "Aaron Eckhart"
+new_person.save 
+
+ae = Person.where({ name: "Aaron Eckhart"})[0]
+
+new_person = Person.new
+new_person.name = "Maggie Gyllenhaal"
+new_person.save 
+
+mg = Person.where({ name: "Maggie Gyllenhaal"})[0]
+
+new_person = Person.new
+new_person.name = "Tom Hardy"
+new_person.save 
+
+th = Person.where({ name: "Tom Hardy"})[0]
+
+new_person = Person.new
+new_person.name = "Joseph Gordon-Levitt"
+new_person.save 
+
+jgl = Person.where({ name: "Joseph Gordon-Levitt"})[0]
+
+new_person = Person.new
+new_person.name = "Anne Hathaway"
+new_person.save 
+
+ah = Person.where({ name: "Anne Hathaway"})[0]
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
